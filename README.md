@@ -28,13 +28,13 @@ Otherwise you can train the models manually by following these given steps below
     mask respectivly].
   
   # Training TOM
-  3.Run TOM stage, python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle. ->this training result gets stored under       
-    checkpoints/TOM/tom_final.pth -> which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" 
-    directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder.
-  4. Run TOM stage: python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth ->          final Output gets stored in result/Tom/test/try-on.
+  3.Run TOM stage, python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle. ->this training result gets stored under 
+    checkpoints/TOM/tom_final.pth
+  
+# Testing
+  4. python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth -> which will 
+     generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" 
+     folders into your data directory, for example inside "data/test" folder.
+  5. Run TOM stage: python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth ->          final Output gets stored in result/Tom/test/try-on.
 
 
-
-
-
-# Testing 
