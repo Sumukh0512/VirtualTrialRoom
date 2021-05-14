@@ -13,6 +13,6 @@ You get pre trained models from here : https://1drv.ms/u/s!Ai8t8GAHdzVUiQA-o3C7c
 Otherwise you can train the models manually by following these given steps below:
 
 # Training GMM
-python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle # this training process time takes long about 10 hours.
+python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle .# this training process time takes long about 10 hours.
 Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.
 Run TOM stage, python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
