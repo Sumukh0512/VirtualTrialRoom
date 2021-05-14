@@ -19,22 +19,25 @@ For training/testing VITON dataset, full and processed dataset is available here
 You get pre trained models from here : https://1drv.ms/u/s!Ai8t8GAHdzVUiQA-o3C7cnrfGN6O?e=EaRiFP .
 Otherwise you can train the models manually by following these given steps below:
 
-  # Training GMM
-  1.python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle ->[this training process time takes long about 10 hours].-> This training   
-    result is GMM trained model with.pth file will be created under checkpoints/GMM/gmm_final.pth 
-  2.Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside 
-    the "result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.[ if u are 
-    training manually follow this step otherwise make a duplicate of cloth and cloth mask which is located in data/train rename the copy as warp-cloth and warp 
-    mask respectivly].
+# Training GMM
+ 1.python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle ->[this training process time takes long about 10 hours].
+   -> This training result is GMM trained model with.pth file will be created under checkpoints/GMM/gmm_final.pth 
+ 
+ 2.Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside 
+   the "result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.[ if u are 
+   training manually follow this step otherwise make a duplicate of cloth and cloth mask which is located in data/train rename the copy as warp-cloth and warp 
+   mask respectivly].
   
-  # Training TOM
+# Training TOM
+  
   3.Run TOM stage, python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle. ->this training result gets stored under 
     checkpoints/TOM/tom_final.pth
   
-# Testing
-  4. python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth -> which will 
-     generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" 
-     folders into your data directory, for example inside "data/test" folder.
-  5. Run TOM stage: python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth ->          final Output gets stored in result/Tom/test/try-on.
+# Testing [ Skip training process if u have pre-trained models installed just make a duplicate of cloth and cloth mask which is located in data/train directory     rename the copies as warp-cloth and warp mask respectively].
+ 
+ 4. python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth -> which will 
+    generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" 
+    folders into your data directory, for example inside "data/test" folder.
+ 5. Run TOM stage: python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth ->         final Output gets stored in result/Tom/test/try-on.
 
 
