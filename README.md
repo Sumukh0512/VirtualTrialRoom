@@ -2,7 +2,7 @@
 Final Year Project
 
 # Installation
-This implementation is built and tested in PyTorch 0.4.1. Pytorch and torchvision are recommended to install with conda: conda install pytorch=0.4.1 torchvision=0.2.1 -c pytorch
+This implementation is built and tested in PyTorch 0.4.1. , Pytorch and torchvision are recommended to install with conda: conda install pytorch=0.4.1 torchvision=0.2.1 -c pytorch
 For all packages, run pip install -r requirements.txt
 
 steps for conda environment:
