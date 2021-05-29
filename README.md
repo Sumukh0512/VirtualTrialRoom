@@ -27,7 +27,7 @@ Otherwise you can train the models manually by following these given steps below
    the "result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.  
 # Training TOM
   
-  3.Run TOM stage, python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle. ->this training result gets stored under 
+  3.Run python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle. ->this training result gets stored under 
     checkpoints/TOM/tom_final.pth
   
 # Testing 
